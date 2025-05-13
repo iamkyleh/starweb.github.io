@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+
+main {
+    padding: 0; /* Remove any top padding if you made the header fixed earlier */
+}
 /*--------------------------------------------------------------------------------------
                     Custom properties for colors, backgrounds, and typography
 ----------------------------------------------------------------------------------------*/
@@ -604,23 +615,22 @@ nav a {
 
 .hero {
     position: relative;
-    min-height: 90vh;
+    height: 100vh; /* Ensures it fits the viewport height */
+    min-height: unset; /* Remove min-height if set */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     overflow: hidden;
+    background: url('Untitled design.gif') center center/contain no-repeat;
 }
 
-.upload-form {
+.hero-overlay {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-    background: rgba(0,0,0,0.5);
-    padding: 10px 20px;
-    border-radius: 8px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5); /* Adjust opacity as needed */
+    z-index: 1;
 }
 
 .hero-content {
@@ -637,7 +647,7 @@ nav a {
 
 .subtitle-box {
     display: inline-block;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     border: 2px solid #a084ff;
     border-radius: 4px;
     padding: 12px 24px;
@@ -666,5 +676,14 @@ nav a {
     width: 32px;
     height: 32px;
     margin: 0 8px;
-    filter: invert(1);
+}
+
+.upload-form {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
 }
