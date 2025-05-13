@@ -1,0 +1,670 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------------------------------
+                    Custom properties for colors, backgrounds, and typography
+----------------------------------------------------------------------------------------*/
+
+:root {
+    --headline: rgb(0, 60, 120);
+    /* Yale Blue/deep blue color  */
+    --text: rgb(200, 200, 220);
+    /* Gray with blue touch, aka French gray */
+    --text2: rgb(0, 0, 0);
+    --background: rgb(200, 230, 255);
+    /* A very light blue color, aka Columbia blue */
+    --background-shade: rgba(200, 230, 255, 0.5)
+        /* box-shadow and shade effects*/
+        --alternate-bg: rgb(120, 120, 120);
+    /* Medium gray color */
+
+    /* Custom properties for success and error messages */
+    --alternate-bg-success: rgba(0, 60, 120, 0.4);
+    /* */
+    --alternate-bg-error: rgb(200, 200, 220);
+    /*  */
+
+    /*Custom properties sans-serif typography*/
+
+    --font-roboto-light: 'Roboto', sans-serif;
+    /*must be combined with font-weight of 300*/
+    --font-roboto-regular: 'Roboto', sans-serif;
+    /*must be combined with font-weight of 400*/
+    --font-roboto-bold: 'Roboto', sans-serif;
+    /*must be combined with font-weight of 700*/
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.brand {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--headline);
+}
+
+.jumbotron {
+    background-color: #ffffff !important;
+    padding-bottom: 1rem;
+}
+
+/*---------------------------------------------------------------------------------
+                        Styling of navbar and nav-links
+----------------------------------------------------------------------------------*/
+
+.navbar {
+    background-color: var(--background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: var(--font-roboto-bold);
+    color: var(--headline);
+}
+
+.nav-link {
+    font-family: var(--font-roboto-regular);
+    color: var(--text2);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    background-color: var(--background);
+    border-radius: 0.3rem;
+}
+
+.navbar-toggler {
+    border-color: var(--headline);
+}
+
+/*---------------------------------------------------------------------------------
+                        Styling of login status in navbar
+----------------------------------------------------------------------------------*/
+
+#login-status {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+}
+
+/*---------------------------------------------------------------------------------
+                        Styling of landing page
+----------------------------------------------------------------------------------*/
+
+.landing-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.landing-btn {
+    background-color: var(--background);
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 0.4rem 0.7rem black;
+    max-width: 50%;
+}
+
+.landing-btn-1 {
+    background-color: var(--headline);
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 0.4rem 0.7rem black;
+    color: white;
+}
+
+.landing-btn-1:hover {
+    background-color: var(--headline);
+    color: black;
+}
+
+.common-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.landing-btn:hover,
+.landing-btn-1:hover {
+    box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.landing-btn-1:hover {
+    color: white;
+}
+
+/*---------------------------------------------------------------------------------
+                        Styling of blog content and blog cards
+----------------------------------------------------------------------------------*/
+
+.author-bg {
+    background: var(--alternate-bg);
+}
+
+.author {
+    color: var(--text);
+    font-weight: bold;
+    margin: 4px;
+    color: var(--text2);
+    font-family: var(--font-roboto-regular);
+    font-weight: 400;
+}
+
+.card-title {
+    font-family: var(--font-roboto-bold);
+    font-weight: 700;
+}
+
+.card-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 300;
+}
+
+.link-to-post {
+    text-decoration: none;
+    color: var(--headline);
+}
+
+/*-------------------------------------------------------------------------
+                        Styling of pagination "Next"/"Previous"
+---------------------------------------------------------------------------*/
+
+.page-link {
+    color: var(--headline);
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.page-link:hover {
+    color: var(--headline);
+    text-decoration: none;
+    background: transparent;
+}
+
+.pagination-item {
+    border-radius: 20%;
+    margin: 0 5px;
+    padding: 0.8rem;
+    background-color: var(--background);
+}
+
+.pagination-item:hover {
+    background-color: var(--background);
+    border: 1px solid var(--headline);
+}
+
+/*-------------------------------------------------------------------------
+        Styling of individual blog posts, i.e. single_post.html
+---------------------------------------------------------------------------*/
+
+.container p b {
+    font-weight: 700;
+    color: #333333;
+}
+
+.container p {
+    font-size: 1.4rem;
+}
+
+/*-------------------------------------------------------------------------
+        Styling of sign-up/register form
+---------------------------------------------------------------------------*/
+
+.signup {
+    max-width: 100%;
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.form-group .alert {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.signup-container {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-signup {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background-color: #0056b3;
+}
+
+.alert-danger {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+/*-------------------------------------------------------------------------
+        Styling of login/logout status messages
+---------------------------------------------------------------------------*/
+
+/* All the alterts are styled the same (success, error) */
+.alert-custom {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 60%;
+    margin: 1rem auto 0 auto;
+    border: 1px solid var(--headline);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.alert-success-custom {
+    background-color: var(--alternate-bg-success);
+    color: white;
+}
+
+.btn-close.custom-close {
+    margin-left: 1rem;
+    color: white !important;
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 1;
+}
+
+/*-------------------------------------------------------------------------
+        Styles for the 404.html page
+---------------------------------------------------------------------------*/
+
+.custom-error-page {
+    background-color: rgba(200, 230, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 2rem;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-error-page .error-container {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgb(200, 200, 220);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(200, 230, 255, 0.5);
+}
+
+.custom-error-page .error-message {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    color: rgb(0, 60, 120);
+    margin-bottom: 1rem;
+}
+
+.custom-error-page p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.custom-error-page a {
+    text-decoration: none;
+    color: rgb(0, 60, 120);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/*-------------------------------------------------------------------------
+        Styles for approval messages to users (approved or pending approval)
+---------------------------------------------------------------------------*/
+
+/* Success message for an approved comment to the user who made the comment */
+.approval-success {
+    background-color: var(--alternate-bg-success);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    margin: 1rem auto 0 auto;
+    font-weight: bold;
+    font-size: 0.7rem;
+    max-width: 50%;
+    text-align: center;
+}
+
+/* Message to a user who made a comment that comment is still pending approval */
+.pending-approval {
+    background-color: var(--alternate-bg-error);
+    color: black;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    margin: 1rem auto 0 auto;
+    font-weight: bold;
+    max-width: 50%;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------
+        Customize the delete modal on size, button and font-size
+---------------------------------------------------------------------------*/
+
+.custom-modal {
+    max-width: 50% !important;
+}
+
+.modal-content {
+    height: 50vh !important;
+}
+
+.delete-confirm-btn {
+    background-color: var(--headline);
+    color: white;
+    margin-left: 1rem;
+    max-width: 40%;
+}
+
+.close-confirm-btn {
+    max-width: 40%;
+}
+
+.modal-body {
+    font-size: 1.4rem;
+}
+
+/*-------------------------------------------------------------------------
+        Contact page
+---------------------------------------------------------------------------*/
+
+#jumbo-contact {
+    max-width: 40%;
+    margin: 0 auto;
+}
+
+
+/*-------------------------------------------------------------------------
+        Media Queries / responsiveness
+---------------------------------------------------------------------------*/
+
+@media (max-width: 1100px) {
+
+    .approval-success {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+        max-width: 75%;
+    }
+
+    .pending-approval {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+        max-width: 75%;
+    }
+
+    #jumbo-contact {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 991px) {
+
+    /* Avoid here that first nav-item touches the hamburger on smaller screens  */
+
+    .navbar-nav .nav-item:first-child {
+        margin-top: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        color: var(--text);
+    }
+
+    /* Margin left for nav-links as otherwise the background color of nav-link "touched"  */
+
+    .navbar-nav .nav-link {
+        margin-left: 0.8rem;
+    }
+
+    .custom-link {
+        width: 80%;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 926px) {
+    .alert-custom {
+        font-size: 1rem;
+    }
+
+    .approval-success {
+        padding: 0.4rem;
+        font-size: 0.4rem;
+        max-width: 95%;
+    }
+
+    .pending-approval {
+        padding: 0.4rem;
+        font-size: 0.4rem;
+        max-width: 95%;
+    }
+
+    #jumbo-contact {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 860px) {
+
+    .comment-submit {
+        width: 80% !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Media Query for AllAuth messages so that message does not overlap with the closing button */
+
+@media (max-width: 576px) {
+    .alert-custom {
+        font-size: 1.1rem;
+        padding: 0.75rem;
+    }
+
+    .btn-close {
+        font-size: 1.2rem;
+    }
+
+    .jumbotron.jumbo-contact {
+        max-width: 90% !important;
+        margin: 0 auto;
+        background-color: yellow !important;
+    }
+
+    .custom-link {
+        width: 80%;
+        font-size: 2rem;
+    }
+
+    .landing-btn {
+        width: 80%;
+        font-size: 1.8rem;
+    }
+
+}
+
+/* Media Query for AllAuth messages so that message does not overlap 
+    with the closing button + smaller buttons */
+
+@media (max-width: 430px) {
+    .custom-link {
+        max-width: 100%;
+        font-size: 1.7rem;
+    }
+
+    .alert-custom {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+    }
+
+    .btn-close {
+        font-size: 1rem;
+    }
+
+    .landing-btn {
+        max-width: 100%;
+        font-size: 1.7rem;
+    }
+
+    #jumbo-contact {
+        max-width: 90%;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px 0 48px;
+    background: transparent;
+}
+
+.logo {
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-right: 16px;
+}
+
+.sponsor-btn {
+    background: #4ea6e6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+.upload-form {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.subtitle-box {
+    display: inline-block;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #a084ff;
+    border-radius: 4px;
+    padding: 12px 24px;
+    margin-bottom: 32px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.launch-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 32px;
+}
+
+.socials {
+    margin-top: 16px;
+}
+
+.socials a img {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+    filter: invert(1);
+}
